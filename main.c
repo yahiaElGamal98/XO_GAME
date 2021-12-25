@@ -5,7 +5,7 @@
 
 #define ROWS 3   //define rows and columns as 3x3 matrix
 #define COLUMNS 3
-#define Continue_Playing 0   //some flags to check game condition
+#define CONTINUE_PLAYING 0   //some flags to check game condition
 #define WON 1
 #define OCCUPIED 1
 
@@ -140,7 +140,7 @@ void play(uint8_t players[], uint8_t sizeofPlayers, XO xoGame[ROWS][COLUMNS])
 			printf("DRAW!\n");   //print draw if no one won and we reached max plays
 			break;
 		}
-		else if (Continue_Playing == checkStatus(xoGame))   //the game is still being played
+		else if (CONTINUE_PLAYING == checkStatus(xoGame))   //the game is still being played
 		{
 			continue;
 		}
@@ -149,10 +149,10 @@ void play(uint8_t players[], uint8_t sizeofPlayers, XO xoGame[ROWS][COLUMNS])
 
 void printGame(XO xoGame[ROWS][COLUMNS])   
 {
-	printf("-----------\n");
 	uint8_t rowIndex;   //current row index value
 	uint8_t columnIndex;   // current column indexValue
 	uint8_t emptyPlaceIndicator = 0;   //used to fill unused places with corresponding numbers
+	printf("-----------\n");
 	for (rowIndex = 0; rowIndex < ROWS; rowIndex++)
 	{
 		for (columnIndex = 0; columnIndex < COLUMNS; columnIndex++)
@@ -210,7 +210,7 @@ uint8_t checkStatus(XO xoGame[ROWS][COLUMNS])
 	}
 	else 
 	{
-		return Continue_Playing;   //game is still underway, continue
+		return CONTINUE_PLAYING;   //game is still underway, continue
 	}
 
 }
