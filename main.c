@@ -30,8 +30,8 @@ void printGame(XO xoGame[ROWS][COLUMNS]);   //func. to print game
 int main(void)
 {
 	XO xoGame[ROWS][COLUMNS] = { {{'\0',0},{'\0',0},{'\0',0}},   //initializing gameboard with nulls and all places are available
-							 {{'\0',0},{'\0',0},{'\0',0}},
-							 {{'\0',0},{'\0',0},{'\0',0}} };
+				     {{'\0',0},{'\0',0},{'\0',0}},
+				     {{'\0',0},{'\0',0},{'\0',0}} };
 	uint8_t players[ROWS*COLUMNS];   //initialitizing playing sequence array of size rows*columns in max case
 	tutorial();   //printing tutorial of game
 	initPlayers(players, ROWS*COLUMNS);   //initializing playing sequence depending on the starting player
